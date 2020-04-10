@@ -85,7 +85,7 @@ public class UILogic : MonoBehaviour
     public void Resume()
     {
         Debug.Log("noo paused");
-        isPaused = true;
+        isPaused = false;
         panel.SetActive(false);
         Time.timeScale = time;
     }
@@ -93,19 +93,17 @@ public class UILogic : MonoBehaviour
     void PauseImplementation()
     {
         Debug.Log("ESC");
-        if (isPaused)
+        if (!isPaused)
         {
-            Debug.Log("paused");
-            Time.timeScale = 0;
-            isPaused = false;
-            panel.SetActive(true);
+            Time.timeScale = time;
+            isPaused = true;
+            panel.SetActive(false);
         }
         else
         {
-            Debug.Log("noo paused");
-            isPaused = true;
-            panel.SetActive(false);
-            Time.timeScale = time;
+            isPaused = false;
+            panel.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }
