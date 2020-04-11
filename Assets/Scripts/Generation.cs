@@ -14,7 +14,7 @@ public class Generation : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        figureCount = 2;
+        figureCount = 20;
 
         float x;
         float y;
